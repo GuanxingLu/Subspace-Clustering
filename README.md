@@ -1,4 +1,4 @@
-# Subspace-Clustering: TL-SSC
+# Subspace-Clustering
 The implementation of our paper Pairwise Constraints Guided Subspace Clustering via Tensor Low-Rank Optimization
 
 Before running the code, you need to download the following toolbox:
