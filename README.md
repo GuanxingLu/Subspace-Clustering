@@ -1,5 +1,5 @@
 # Subspace-Clustering
-The implementation of our paper Pairwise Constraints Guided Subspace Clustering via Tensor Low-Rank Optimization
+The implementation of our paper Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation
 
 Before running the code, you need to download the following toolbox:
 1. LinADMM library from: https://github.com/canyilu/LibADMM
