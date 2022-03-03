@@ -1,4 +1,4 @@
-function [C,E,obj,ERR,iter] = tlrr_tnn_new(X,A,Omega,lambda,beta,s,opts)
+function [C,E,obj,ERR,iter] = tlrr_tnn(X,A,Omega,lambda,beta,s,opts)
 % min_{C,E,B,Z,D} ||C||_{*}+lambda*||E||2_1+beta*trace(B*L*B'), s.t. X = XZ+E,B=D
 % ,P(D)=P(A), B=B', Z=C(:,:,1),B=C(:,:,2).
 %
@@ -84,7 +84,6 @@ for iter = 1 : max_iter
 
     % update B
     B = (mu*(C(:,:,2)+D) - (Y2(:,:,2)+Y3))/(Beta2L + 2*mu*I);
-    B = 0.5*(B+B');
     
     % update D
     D = B + Y3/mu;
