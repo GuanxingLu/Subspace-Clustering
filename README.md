@@ -1,5 +1,6 @@
 # Subspace-Clustering
 The implementation of our paper Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation
+https://arxiv.org/abs/2205.10481
 
 Before running the code, you need to download the following toolbox:
 1. LinADMM library from: https://github.com/canyilu/LibADMM
