@@ -29,6 +29,8 @@ nmi_p_clrr = acc_p_proposed;
 
 f = {'ORL400_new';'YaleB944';'COIL20';'Isolet1';'2k2k_new';...
     'Alphabet';'BF0502';'Notting-Hill'};
+f1 = {'ORL';'YaleB';'COIL20';'Isolet';'MNIST';...
+    'Alphabet';'BF0502';'Notting-Hill'};
 %% Parameter settings
 %Proposed
 lambda_tlrr_fileset = [5 1 0.5 0.5 0.5 0.1 0.1 0.01];
@@ -53,11 +55,11 @@ beta_sclrr_fileset =   [1  1 1   0.1 1 1 1 1];
 %CLRR
 lambda_clrr_fileset = [5 1 1 0.5 0.5 0.05 0.5 1];
 
+tic
 %% file loop
 for di = 1:length(f)
     k = 1;
     %% load data
-    disp([f{di}])
     filename = fullfile('./data',f{di});
     outfilename = fullfile('./result',f{di});
     fn = [filename,'.mat'];
@@ -76,14 +78,14 @@ for di = 1:length(f)
     lambda_dplrr = 1/sqrt(log(n));
     lambda_lrr = lambda_lrr_fileset(di);
     lambda_sslrr = lambda_sslrr_fileset(di);
-     lambda_lrpca = lambda_lrpca_fileset(di);
-     lambda_cpssc = lambda_cpssc_fileset(di);
-     lambda_sclrr = lambda_sclrr_fileset(di);
-     beta_sclrr = beta_sclrr_fileset(di);
-     lambda_clrr = lambda_clrr_fileset(di);
+    lambda_lrpca = lambda_lrpca_fileset(di);
+    lambda_cpssc = lambda_cpssc_fileset(di);
+    lambda_sclrr = lambda_sclrr_fileset(di);
+    beta_sclrr = beta_sclrr_fileset(di);
+    lambda_clrr = lambda_clrr_fileset(di);
     
     for p = testset_p
-        meanNum = 1;
+        meanNum = 10;
         acc_rec1 = zeros(1,meanNum);
         acc_rec2 = zeros(1,meanNum);
         acc_rec3 = zeros(1,meanNum);
@@ -103,14 +105,13 @@ for di = 1:length(f)
         nmi_rec8 = zeros(1,meanNum);
         nmi_rec9 = zeros(1,meanNum);
         parfor j = 1:meanNum
+        disp(['idx=' num2str(j)])
         tmp = load([filename '_random_select_' num2str(p) '_' num2str(j) '.mat']);
         Omega_rand = tmp.Omega_rand;
         A = gnd2pair11(gnd, Omega_rand);    
         Omega = find(A~=0);
     %% low-rank representation (lrr) 
-         tic
-            [X,~,~,~,~] = lrr(Xn,Xn,lambda_lrr,opts);
-         toc
+         [X,~,~,~,~] = lrr(Xn,Xn,lambda_lrr,opts);
          s = max(max(X));
          W_ans2 = 0.5*(abs(X) + abs(X'));
          W_ans2 = W_ans2 - diag(diag(W_ans2));
@@ -118,9 +119,7 @@ for di = 1:length(f)
         acc_rec2(j) = Accuracy(idx_ans2,double(gnd));
         [~, nmi_rec2(j), ~] = compute_nmi(double(gnd),idx_ans2);
     %% tensor low-rank representation
-        tic
         [C,~,~,~,~] = tlrr_tnn_new(Xn,A,Omega,lambda_tlrr,beta_tlrr,s,opts); 
-        toc
         Z_ans1 = C(:,:,1);
         B_ans1 = C(:,:,2);
         Z_ans1 = 0.5*(abs(Z_ans1) + abs(Z_ans1')); 
@@ -135,67 +134,52 @@ for di = 1:length(f)
     %% dplrr
         [D0]= build_init_D(Xn,gnd,Omega_rand);
         [Z0_lrr]= build_lrr_Z0(gnd,Omega_rand,n);  
-        tic
         [A_ans3 ,B_ans3, C_ans3, D_ans3, ~, Z_ans3]=...
             label_guided_lrr(Xn,D0,Z0_lrr,lambda_dplrr,alpha_dplrr,beta_dplrr);
-        toc
         W_ans3 = (abs(Z_ans3)+abs(Z_ans3)')/2;
         W_ans3 = W_ans3 - diag(diag(W_ans3));
-        
         idx_ans3 = SpectralClustering(W_ans3 ,clsnum);
         acc_rec3(j)= Accuracy(idx_ans3,double(gnd));
         [~, nmi_rec3(j), ~] = compute_nmi(double(gnd),idx_ans3);
     %% SSLRR
         [Z0_lrr]= build_lrr_Z0(gnd,Omega_rand,n);
-        tic
         [~,~,Z_ans5] = sslrr(Xn,Z0_lrr,lambda_sslrr);
-        toc
         Z_ans5(Z0_lrr==0) = 0;
         %Z_ans5(Z0_lrr==1) = 1;
          W_ans5 = 0.5*(abs(Z_ans5) + abs(Z_ans5'));
          W_ans5 = W_ans5 - diag(diag(W_ans5));
-         
         idx_ans5 = SpectralClustering(W_ans5 ,clsnum);
         acc_rec5(j) = Accuracy(idx_ans5,double(gnd));
         [~, nmi_rec5(j), ~] = compute_nmi(double(gnd),idx_ans5);
     %% L-RPCA
         Y0 = init_label_matrix_lrpca(n,Omega_rand,gnd);
-        tic
-            [D,E_ans6,~] = l_rpca(Xn,Y0,lambda_lrpca,w,[]);
-        toc
+        [D,E_ans6,~] = l_rpca(Xn,Y0,lambda_lrpca,w,[]);
         W_ans6 = knngraph(D',n);
-        
         idx_ans6 = SpectralClustering(W_ans6 ,clsnum);
         acc_rec6(j)= Accuracy(idx_ans6,double(gnd));
         [~, nmi_rec6(j), ~] = compute_nmi(double(gnd),idx_ans6);
             
       %% CP-SSC 
-         tic
-            [C_ans7,WF, err1J, err2J, err3J] = cp_ssc(Xn, A, false, lambda_cpssc);
-         toc
+         [C_ans7,WF, err1J, err2J, err3J] = ...
+             cp_ssc(Xn, A, false, lambda_cpssc);
          W_ans7 = C_ans7(1:n, :);
          W_ans7 = 0.5*(abs(W_ans7) + abs(W_ans7'));
          W_ans7 = W_ans7 - diag(diag(W_ans7));
-         
         idx_ans7 = SpectralClustering(W_ans7 ,clsnum);
         acc_rec7(j)= Accuracy(idx_ans7, double(gnd));
          [~, nmi_rec7(j), ~] = compute_nmi(double(gnd),idx_ans7);
          
       %% SC-LRR
-         tic
-         [Z_ans8,E_ans8] = sclrr_v1(Xn, A, lambda_sclrr,beta_sclrr,[]);   
-        toc
+         [Z_ans8,E_ans8] = ...
+             sclrr_v1(Xn, A, lambda_sclrr,beta_sclrr,[]);   
          W_ans8 = 0.5*(abs(Z_ans8) + abs(Z_ans8'));  
          W_ans8 = W_ans8 - diag(diag(W_ans8));
-         
          idx_ans8 = SpectralClustering(W_ans8 ,clsnum);
          acc_rec8(j) = Accuracy(idx_ans8,double(gnd));
          [~, nmi_rec8(j), ~] = compute_nmi(double(gnd),idx_ans8);
          %% clrr        
-          Q = init_mustlink_matrix(n,Omega_rand,gnd);
-         tic
-            [Z_ans9,~] = clrr(Xn,Q,lambda_clrr,opts);
-         toc
+         Q = init_mustlink_matrix(n,Omega_rand,gnd);
+         [Z_ans9,~] = clrr(Xn,Q,lambda_clrr,opts);
          W_ans9 = Z_ans9 *Q';
          W_ans9 = 0.5*(abs( W_ans9) + abs( W_ans9'));
          W_ans9 = W_ans9 - diag(diag(W_ans9));
@@ -245,3 +229,4 @@ for di = 1:length(f)
    'nmi_p_lrpca','nmi_p_cpssc','nmi_p_sclrr','nmi_p_clrr');
 end
 delete(gcp('nocreate'));
+toc
