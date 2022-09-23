@@ -119,7 +119,7 @@ for di = 1:length(f)
         acc_rec2(j) = Accuracy(idx_ans2,double(gnd));
         [~, nmi_rec2(j), ~] = compute_nmi(double(gnd),idx_ans2);
     %% tensor low-rank representation
-        [C,~,~,~,~] = tlrr_tnn_new(Xn,A,Omega,lambda_tlrr,beta_tlrr,s,opts); 
+        [C,~,~,~,~] = tlrr_tnn(Xn,A,Omega,lambda_tlrr,beta_tlrr,s,opts); 
         Z_ans1 = C(:,:,1);
         B_ans1 = C(:,:,2);
         Z_ans1 = 0.5*(abs(Z_ans1) + abs(Z_ans1')); 
