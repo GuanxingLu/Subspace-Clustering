@@ -5,8 +5,8 @@ https://arxiv.org/abs/2205.10481
 This repository contains:
 
 1. [Datasets and Selected Annotations](data) in our paper, includeing ORL, YaleB, COIL20, Isolet, MNIST, Alphabet, BF0502 and Notting-Hill.
-2. A comparision [demo](demo_parallel).
-3. A [function](tlrr_tnn_new) to implement the proposed method.
+2. A comparision [demo](demo_parallel.m).
+3. A [function](tlrr_tnn_new.m) to implement the proposed method.
 4. Some raw experimental [results](result).
 
 ## Usage
