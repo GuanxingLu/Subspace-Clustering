@@ -15,6 +15,6 @@ This repository contains:
 Before running the code, you need to download the following toolbox:
 1. LibADMM library from: https://github.com/canyilu/LibADMM
 2. Graph Signal Processing Toolbox (GSPBox) from: https://github.com/epfl-lts2/gspbox
-3. ClusteringMeasure from: https://github.com/jyh-learning/MVSC-TLRR
+3. Clustering Measure from: https://github.com/jyh-learning/MVSC-TLRR
 
-Any questions, please contact me through the Email guanxing at seu dot edu dot cn
+Any questions, please contact me through the Email guanxing AT seu DOT edu DOT cn
