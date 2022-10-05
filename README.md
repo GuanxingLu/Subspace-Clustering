@@ -13,7 +13,7 @@ This repository contains:
 ## Usage
 
 Before running the code, you need to download the following toolbox:
-1. LinADMM library from: https://github.com/canyilu/LibADMM
+1. LibADMM library from: https://github.com/canyilu/LibADMM
 2. Graph Signal Processing Toolbox (GSPBox) from: https://github.com/epfl-lts2/gspbox
 3. ClusteringMeasure from: https://github.com/jyh-learning/MVSC-TLRR
 
