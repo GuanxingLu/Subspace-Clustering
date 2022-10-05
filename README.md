@@ -17,6 +17,8 @@ Before running the code, you need to download the following toolbox:
 2. Graph Signal Processing Toolbox (GSPBox) from: https://github.com/epfl-lts2/gspbox
 3. Clustering Measure from: https://github.com/jyh-learning/MVSC-TLRR
 
+## Citation
+
 If you find the code useful, please feel free to cite our paper:
 
 @article{lu2022semi,
@@ -25,5 +27,7 @@ If you find the code useful, please feel free to cite our paper:
   journal={arXiv preprint arXiv:2205.10481},
   year={2022}
 }
+
+## Contact
 
 Any questions, please contact me through the Email guanxing AT seu DOT edu DOT cn
