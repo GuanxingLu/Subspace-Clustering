@@ -17,4 +17,13 @@ Before running the code, you need to download the following toolbox:
 2. Graph Signal Processing Toolbox (GSPBox) from: https://github.com/epfl-lts2/gspbox
 3. Clustering Measure from: https://github.com/jyh-learning/MVSC-TLRR
 
+If you find the code useful, please cite our paper:
+
+@article{lu2022semi,
+  title={Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation},
+  author={Lu, Guanxing and Jia, Yuheng and Hou, Junhui},
+  journal={arXiv preprint arXiv:2205.10481},
+  year={2022}
+}
+
 Any questions, please contact me through the Email guanxing AT seu DOT edu DOT cn
