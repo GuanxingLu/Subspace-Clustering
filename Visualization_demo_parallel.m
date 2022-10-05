@@ -57,5 +57,9 @@ plot(100*Data.testset_p,Data.nmi_p_clrr(1,:),'-.o','LineWidth',1.2);
 p11(1).Color = [0.894117647058824 0.121568627450980 0.149019607843137];
 xlabel('Labeled Percentage (%)','FontSize',26)
 ylabel('NMI','FontSize',26)
+if di == 1
+    legend('Proposed Method','LRR','DPLRR','SSLRR','L-RPCA','CP-SSC',...
+    'SC-LRR','CLRR','NumColumns',2,'FontSize',11)
+end
 title([f1{di}],'FontSize',26)
 end
