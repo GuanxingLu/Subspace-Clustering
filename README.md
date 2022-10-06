@@ -2,6 +2,8 @@
 The implementation of our paper *Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation*
 https://arxiv.org/abs/2205.10481
 
+![image](image/illustration.png)
+
 This repository contains:
 
 1. [Datasets and Selected Annotations](data) in our paper, includeing ORL, YaleB, COIL20, Isolet, MNIST, Alphabet, BF0502 and Notting-Hill.
