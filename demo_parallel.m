@@ -1,4 +1,4 @@
-%% The implementation of our paper
+%% The comparision demo of our paper
 % Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation
 % https://arxiv.org/abs/2205.10481
 % before running the code, you need to download libraries from 
