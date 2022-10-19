@@ -1,4 +1,4 @@
-%% Comparisons of the clustering accuracy and NMI of different methods.
+%% Visualized comparisons of the clustering accuracy and NMI of different methods.
 clc,clear
 close all
 addpath(genpath(cd))
