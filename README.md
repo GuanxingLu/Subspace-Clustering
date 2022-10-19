@@ -32,4 +32,4 @@ If you find the code useful, please feel free to cite our paper:
 
 ## Contact
 
-Any questions, please contact me through the Email guanxing AT seu DOT edu DOT cn
+Any questions, please contact me through guanxing AT seu DOT edu DOT cn
