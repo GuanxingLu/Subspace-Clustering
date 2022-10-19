@@ -7,10 +7,10 @@ https://arxiv.org/abs/2205.10481
 This repository contains:
 
 1. [Datasets and Selected Annotations](data) in our paper, includeing ORL, YaleB, COIL20, Isolet, MNIST, Alphabet, BF0502 and Notting-Hill.
-2. A [function](tlrr_tnn_new.m) to implement the proposed method.
-3. A [comparision demo](demo_parallel.m) of the mentioned methods (you may need to implement them yourself, or refer to the possible official implementation) in our manuscript, including LRR, DPLRR, SSLRR, L-RPCA, CP-SSC, SC-LRR and CLRR.
-4. Some raw experimental [results](result).
-5. A [visualization demo](Visualization_demo_parallel.m) of the result files.
+2. A [Function](tlrr_tnn_new.m) to implement the proposed method.
+3. A [Comparision Demo](demo_parallel.m) of the mentioned methods (you may need to implement them yourself, or refer to possible official implementations) in our manuscript, including LRR, DPLRR, SSLRR, L-RPCA, CP-SSC, SC-LRR and CLRR.
+4. Some raw experimental [results](Result).
+5. A [Visualization Demo](Visualization_demo_parallel.m) of the result files.
 
 ## Usage
 
