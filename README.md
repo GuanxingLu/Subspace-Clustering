@@ -1,4 +1,4 @@
-# Subspace-Clustering
+# SSC-TLR
 The implementation of our paper *Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation*
 https://arxiv.org/abs/2205.10481
 
