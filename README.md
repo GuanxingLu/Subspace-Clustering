@@ -21,7 +21,7 @@ Before running the code, you need to download the following toolboxes:
 
 ## Citation
 
-If you find the code useful, please feel free to cite our paper:
+If you find this repository useful, please consider citing our work:
 
 @article{lu2022semi,
   title={Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation},
