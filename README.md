@@ -30,6 +30,3 @@ If you find this repository useful, please consider citing our work:
   year={2022}
 }
 
-## Contact
-
-Any questions, please contact me through guanxing AT seu DOT edu DOT cn
