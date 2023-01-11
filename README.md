@@ -1,6 +1,8 @@
 # SSC-TLR
-The implementation of our paper *Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation*
-https://arxiv.org/abs/2205.10481
+This is an implementation of our IEEE TCSVT 2023 paper 
+[*Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation*](https://arxiv.org/abs/2205.10481)
+Yuheng Jia, Guanxing Lu, Hui Liu, Junhui Hou
+Southeast University, Caritas Institute of Higher Education, City University of Hong Kong
 
 ![image](image/illustration.png)
 
@@ -23,10 +25,15 @@ Before running the code, you need to download the following toolboxes:
 
 If you find this repository useful, please consider citing our work:
 
-@article{lu2022semi,
-  title={Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation},
-  author={Lu, Guanxing and Jia, Yuheng and Hou, Junhui},
-  journal={arXiv preprint arXiv:2205.10481},
-  year={2022}
-}
+```
+@ARTICLE{10007868,
+  author={Jia, Yuheng and Lu, Guanxing and Liu, Hui and Hou, Junhui},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TCSVT.2023.3234556}}
+  ```
 
