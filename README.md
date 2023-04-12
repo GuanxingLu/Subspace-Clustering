@@ -1,4 +1,4 @@
-# SSC-TLR
+# SSC-TLRR
 This is an implementation of our IEEE TCSVT 2023 paper:
 
 [*Semi-Supervised Subspace Clustering via Tensor Low-Rank Representation*](https://arxiv.org/abs/2205.10481)<br />
