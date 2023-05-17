@@ -9,7 +9,7 @@ Southeast University, Caritas Institute of Higher Education, City University of 
 
 This repository contains:
 
-- [Datasets and Selected Annotations](data) in our paper, includeing ORL, YaleB, COIL20, Isolet, MNIST, Alphabet, BF0502 and Notting-Hill.
+- [Datasets and Selected Annotations](data) in our paper, includeing ORL, YaleB, COIL20, Isolet, MNIST, Alphabet, BF0502 and Notting-Hill, and a matched visualization demo.
 - A [Function](tlrr_tnn_new.m) to implement the proposed method.
 - A [Comparision Demo](demo_parallel.m) of the mentioned methods (you may need to refer to possible official implementations, or implement them yourself) in our manuscript, including LRR, DPLRR, SSLRR, L-RPCA, CP-SSC, SC-LRR and CLRR.
 - Some raw experimental [Results](result).
