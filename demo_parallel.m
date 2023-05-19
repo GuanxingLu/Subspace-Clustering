@@ -6,6 +6,7 @@
 
 clc,clear
 addpath(genpath(cd))
+% start parallel pool. If you run this script on your own desktop, just ignore this and modify "parfor" to "for"
 delete(gcp('nocreate'));
 parpool('local',12);
 
