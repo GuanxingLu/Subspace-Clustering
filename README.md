@@ -22,6 +22,13 @@ Before running the code, you need to download the following toolboxes:
 - Graph Signal Processing Toolbox (GSPBox) from: https://github.com/epfl-lts2/gspbox
 - Clustering Measure from: https://github.com/jyh-learning/MVSC-TLRR
 
+## Errata
+
+- We have added ``genWv3.m``, which is used to generate the $k$-NN graph from data.
+- We have renamed the function ``Normalize_test`` (previously used as a copy of the ``normalize`` function for an older version of MATLAB) to ``normalize`` for convenience.
+
+If you still encounter any problems during installation, please feel free to open an issue.
+
 ## Citation
 
 If you find this repository useful, please consider citing our work:
