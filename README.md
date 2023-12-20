@@ -26,6 +26,7 @@ Before running the code, you need to download the following toolboxes:
 
 - We have added ``genWv3.m``, which is used to generate the $k$-NN graph from data.
 - We have renamed the function ``Normalize_test`` (previously used as a copy of the ``normalize`` function for an older version of MATLAB) to ``normalize`` for convenience.
+- We have added ``norm21.m`` to compute the objective value. This does not affect the training progress.
 
 If you still encounter any problems during installation, please feel free to open an issue.
 
