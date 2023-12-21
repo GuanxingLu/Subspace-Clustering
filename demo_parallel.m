@@ -29,7 +29,7 @@ opts.tol = 1e-3;
 
 %% file loop
 tic
-for di = [2 4 5 6 7]
+for di = 1:8
     k = 1;
     %% load data
     filename = fullfile('./data',f{di});
