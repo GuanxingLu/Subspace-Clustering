@@ -14,6 +14,7 @@ This repository contains:
 - A [Comparision Demo](demo_parallel.m) of the mentioned methods (you may need to refer to possible official implementations, or implement them yourself) in our manuscript, including LRR, DPLRR, SSLRR, L-RPCA, CP-SSC, SC-LRR and CLRR.
 - Some raw experimental [Results](result).
 - A [Visualization Demo](Visualization_demo_parallel.m) of the result files.
+- A [Dataset Visualization Demo](Visualization_dataset.m) to visualize the data.
 
 ## Usage
 
